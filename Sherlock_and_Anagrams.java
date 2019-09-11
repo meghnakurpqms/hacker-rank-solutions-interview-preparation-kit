@@ -1,3 +1,4 @@
+//Solution using hashmaps
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,7 +11,7 @@ public class Solution {
 
 
 public static final int ALPHABET_CNT = 26;
-
+//check if anagram
    static boolean isAnagrams(String str1, String str2)
     {
         HashMap<Character, Integer> hmap1 = new HashMap<Character, Integer>();
@@ -34,6 +35,8 @@ public static final int ALPHABET_CNT = 26;
             System.out.println("i:"+ i + "arr:" + arr2[i]);
         System.out.println("hmap2[1]"+hmap2.get(arr2[0]));
         */
+      
+      //map second string
         for (int i = 0; i < arr2.length; i++)
         {
             if(hmap2.get(arr2[i]) == null)
@@ -48,6 +51,8 @@ public static final int ALPHABET_CNT = 26;
         }
         /*System.out.println("arr1:" + hmap1);
         System.out.println("arr2:" + hmap2);*/
+      
+      //compare the maps
         if (hmap1.equals(hmap2))
             return true;
         else
@@ -57,6 +62,7 @@ public static final int ALPHABET_CNT = 26;
     static int sherlockAndAnagrams(String s) {
 
  int cnt = 0;
+       //create substrings
         for (int i = 1, n = s.length(); i < n; i++) {
             List<String> subsetList = new ArrayList<>();
             for (int j = 0; j < n; j++) {
